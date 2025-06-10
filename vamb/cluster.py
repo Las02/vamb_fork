@@ -8,10 +8,13 @@ from math import ceil as _ceil
 from torch.functional import Tensor as _Tensor
 import vamb.vambtools as _vambtools
 from typing import TypeVar, Union, Optional, cast
+import os
 
-_DEFAULT_RADIUS = 0.06
+
+_DEFAULT_RADIUS = float(os.environ['DEFAULT_RADIUS']) # 0.06
 # Distance within which to search for medoid point
-_MEDOID_RADIUS = 0.05
+_MEDOID_RADIUS = float(os.environ['MEDOID_RADIUS']) # 0.05
+print("MEDOID_RADIUS", _MEDOID_RADIUS, "DEFAULT_RADIUS", _DEFAULT_RADIUS)
 
 _DELTA_X = 0.005
 _XMAX = 0.3
