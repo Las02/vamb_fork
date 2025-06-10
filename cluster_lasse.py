@@ -18,7 +18,7 @@ def main(latent: Path, composition: Path, cuda: bool, mrad="0.5", drad="0.8"):
     sequence_lens = meta["lengths"]
     sequence_names = meta["identifiers"]
 
-    cluster( base_clusters_name = "different_clusters/test_clusters.tsv", cuda=cuda, latent=latent, sequence_names=sequence_names, sequence_lens=sequence_lens)
+    cluster( base_clusters_name = f"different_clusters/test_clusters_mrad_{mrad}_defrad_{drad}.tsv", cuda=cuda, latent=latent, sequence_names=sequence_names, sequence_lens=sequence_lens)
 
 def cluster(  base_clusters_name = "clusters.tsv", cuda = False, latent=None, sequence_names=None, sequence_lens=None):
 
